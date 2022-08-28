@@ -1,0 +1,287 @@
+main.kt
+
+*****************************
+import java.util.*
+
+//fun main() {
+//    println("Kotlin")
+//    print("Hello")
+//    ***********data types and variables*********
+//    val foodLike = "Child" //camelcase variable name
+//    val foodLike1 = "Child1"
+//    val foodLike2 = "Child2"
+//
+//    println(foodLike)
+//    println(foodLike1)
+//    println(foodLike2)
+
+    //******val vs var***********
+//    var myNumber: Int=100
+//    var yourNumber: Int=500   //^^^^^data type specification optional
+//    var yourNumber1 =500
+//
+//    println("My Number ${myNumber}")
+
+//    var myNumber =500  //within var, values can be assigned 2 times or more
+//    myNumber=5000
+//
+//    val yourNumber =500
+   // //yourNumber=600    //within val, values can not be reassigned.
+
+   //******Arithmetic Operator***//
+// +,-,*,/,%
+//    var a=5
+//    var b=10
+    /*println("Addition of a+b= ${a+b}")
+    println("Sub of a-b= ${a-b}")
+    println("Mul of a*b= ${a*b}")
+    println("Div of a/b= ${a/b}")
+    println("Mod of a%b= ${a%b}") */
+
+    //****Comparison Operator****//
+    // <,>,==,<=,>=,!=
+//    println("${a<b}")
+//    println("${a>=b}")
+//    println("${a!=b}")
+
+    //*******Logical Operator****//
+// AND && ,OR ||,NOT !
+//    var likeVeg=false
+//    var nonVeg=true
+//    var my=likeVeg && nonVeg
+//    println(my)
+
+    //******String****//
+   /* var myString="Educon"
+    println(myString)
+    println(myString.length)
+    println(myString.get(5))
+
+    var addString=" community"
+    println(myString.plus(addString)) //concatenated a variable
+    println(myString.plus("addString"))*/ //concatenated a string
+
+    //****Array********//
+//array is the collection of same datatype, but in Kotlin , we can collect different datatypes together
+//    var arr= arrayOf(1,2,3,4,5,"awe",1.1) //together all types of datatype
+//    var arr1= intArrayOf(1,2,11,4,5,6) //Specify the datatype
+//    println(Arrays.toString(arr))
+//    println(arr.size)
+//    arr.set(2,10)  //to update any specific index's value
+//    println(Arrays.toString(arr))
+
+//var sortedArray=arr1.sortedArray()
+//    println(arr1.sum())
+//    println(arr1.count())
+//    println(arr1[5])
+//    println(Arrays.toString(sortedArray))
+
+
+    //**********If-Else**********//
+
+//var eliFor=20
+//    if (eliFor>=18){
+//        println("eligible")
+//    }
+//    else{
+//        println("Not eligible")
+//    }
+
+//    var toDay=1
+//    when(toDay){     //like switch in java---kotlin when (arrow operator use)
+//        1 -> println("Sunday")
+//        2 -> println("Monday")
+//        3 -> println("Tuesday")
+//        4 -> println("Wednesday")
+//        5 -> println("Friday")
+//    }
+
+    //***Null Safety******//
+
+//    var myName : String? =null //to store null,use ?...otherwise give error
+//    println(myName)
+
+    //***loop****//
+
+//    for(number in 1..100) // .. ----> range
+//        println(number)
+//
+//    for(number in 1..100 step 2)
+//        println(number)
+
+//    var i=1
+//    while(i<=10){
+//        println(i)
+//        i++
+//    }
+//}
+
+//______________________________________________________//
+
+//*******Functions******//
+
+//Non parameterized function
+
+//    fun addNumber(){
+//        println("This is another function")
+//    }
+//fun main(){
+//    addNumber()
+//}
+
+//parameterized function
+
+//fun addNumber(a:Int,b:Int):Int{
+//    return a+b
+//}
+//fun main(){
+//    println(addNumber(5,20))
+//}
+
+//*****OOPS********//
+
+//####################class and object
+
+/*class MyClass{
+    fun myClass(){
+        println("my class")
+    }
+}
+fun main(){
+    var myClassObj=MyClass()
+    myClassObj.myClass()
+} */
+
+//#############################Inheritence
+
+//open class MyParentClass{  //Java public -->kotlin open
+//    fun myParent(){
+//        println("from parent class")
+//    }
+//}
+//class MyChildClass :MyParentClass(){ //java extends -->kotlin :
+//    fun myChildClass(){
+//        println("from child class")
+//    }
+//}
+//fun main(){
+//    var myChildClassObj= MyChildClass()
+//    myChildClassObj.myParent()
+//    myChildClassObj.myChildClass()
+//    }
+
+//#########################Polymorphism//
+
+/* fun main(){
+
+    var a=10
+    var b=3
+
+    var myFirst="Ed"
+    var myLast="Com"
+
+    println(a+b)
+    println(myLast+myFirst)
+} */
+
+//##########################Encapsulation//
+
+//keywords -->public,protected,private,internal
+
+//1------>public
+/*fun main(){
+    var myClassObj: MyClass
+}*/
+
+////2______>private
+/*fun main() {
+   var myClassObj: MyClass   //error in MyClass
+} */
+
+////3------->protected (to access parent class property in child class)
+/*open class MyC{
+    protected fun protectedFunc(){
+        println("ABC")
+    }
+}
+class ProtectedClass: MyC(){
+
+}  */
+//Internal only use in between specific internal file, no third file can access it
+
+////#######Abstraction
+//under abstract function , no body will be there..that will be in child function
+
+/*abstract class MyCar{
+    abstract fun speed()
+}
+class Maruti:MyClass(){
+    fun speed(){
+        println("fast speed")
+    }
+}
+fun main(){
+    var maruti=Maruti()
+    maruti.speed()
+} */
+
+//###########Try &catch
+
+/*fun main(){
+    try{
+        var num=20/0
+    }
+    catch(e:ArithmeticException){
+        println(e)
+    } finally {
+        println("This is finally block")
+    }
+} */
+
+//######Lambda function
+
+/*fun main(){
+    var lambda={a:Int,b:Int ->a+b}
+    println(lambda(5,10))
+} */
+
+//####Higher order function
+
+/*fun sum(a:Int,b:Int):Int {
+    return a+b
+}
+fun higherOrder(a:Int,b:Int,myfun:(Int,Int) -> Int){
+    println(myfun(a,b))
+}
+//inplace of datatype, function can be sent
+fun main(){
+    higherOrder(5,5,::sum)
+} */
+
+
+
+
+
+
+**************************************
+
+MyClass.kt
+
+***************
+
+//1------>public
+//public class MyClass{
+//
+//}
+
+////2______>private
+//private class MyClass{
+//
+//}
+//#####Abstraction
+
+//open class MyClass {
+//
+//}
+
+
